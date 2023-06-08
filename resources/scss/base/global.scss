@@ -1,0 +1,19 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 18px;
+    font-family: 'Montserrat';
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.container{
+    max-width: $max-width;
+    margin: 0 auto;
+}
