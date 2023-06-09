@@ -1,0 +1,11 @@
+@mixin header($size, $color, $weight, $spacing) {
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+    letter-spacing: $spacing;
+}
+
+.main-header {
+    text-shadow: 0px 4px 4px rgba(204, 204, 204, 0.25);
+    @include header(5.5rem, #FFFFFF, 600, -0.03em);
+}

@@ -1,0 +1,18 @@
+.form-top {
+    position: relative;
+    background: url('img/main/section-1/background_form-max.webp') center/cover no-repeat;
+    &__rectangle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 55%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.7);
+        clip-path: polygon(0 0, 100% 0%, 81% 100%, 0% 100%);
+    }
+    &__content {
+        padding: 120px 0px;
+        position: relative;
+        z-index: 1;
+    }
+}

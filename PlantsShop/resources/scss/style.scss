@@ -1,0 +1,16 @@
+// base
+@import 'base/variables.scss';
+@import 'base/mixins.scss';
+@import 'base/typograpy.scss';
+@import 'base/global.scss';
+
+// componets
+@import 'componets/btn.scss';
+@import 'componets/form-top.scss';
+
+// includes
+@import 'includes/header.scss';
+
+//pages
+
+@import 'pages/main/section-1.scss';

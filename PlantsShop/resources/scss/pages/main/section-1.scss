@@ -1,0 +1,25 @@
+.main-section-1 {}
+
+.main-section-1-form-top {
+    color: white;
+}
+
+.main-section-1-form-top-description {
+    &__header {
+        max-width: 620px;
+    }
+    &__text {
+        font-size: 20px;
+        max-width: 300px;
+    }
+    margin-bottom: 200px;
+}
+
+.main-section-1-form-top-action {
+    &__text {
+        max-width: 320px;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    &__btn {}
+}
