@@ -1,0 +1,14 @@
+.main-section-5 {
+    &__form {}
+    margin-bottom: 100px;
+}
+.container {
+}
+.main-section-5-input-box {
+    input{
+        width: 45%;
+        @include table{
+            width: 100%;
+        }
+    }
+}

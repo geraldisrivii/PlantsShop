@@ -1,0 +1,31 @@
+.diginity-description {
+    max-width: 550px;
+    &__title {
+        font-weight: 600;
+        font-size: 28px;
+        @include phone{
+            font-size: 26px;
+        }
+    }
+    &__text {}
+}
+
+.diginity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    @include table{
+        gap: 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+    &_right{
+        text-align: left;
+        flex-direction: row-reverse;
+        @include table{
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}

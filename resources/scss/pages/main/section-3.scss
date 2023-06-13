@@ -1,0 +1,18 @@
+.main-section-3 {
+    &__header {
+        margin-bottom: 65px;
+    }
+    margin-bottom: 100px;
+}
+.main-section-3-image-box {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    img{
+        display: inline-block;
+        width: 100%;
+    }
+    @include min-table{
+        grid-template-columns: 1fr;
+    }
+}

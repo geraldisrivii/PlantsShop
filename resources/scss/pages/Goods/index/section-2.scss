@@ -1,0 +1,14 @@
+.Good-index-section-2 {
+    margin-bottom: 120px;
+}
+.Good-index-section-2-filter-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__input-list {}
+    &__input-search {}
+}
+.Good-index-section-2-filter-box-input-list-box {
+    display: flex;
+    gap: 30px;
+}

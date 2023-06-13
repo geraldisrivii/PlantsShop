@@ -1,0 +1,47 @@
+// base
+@import 'base/variables.scss';
+@import 'base/mixins.scss';
+@import 'base/typograpy.scss';
+@import 'base/global.scss';
+
+// componets
+@import 'componets/btn.scss';
+@import 'componets/form-top.scss';
+@import 'componets/diginity.scss';
+@import 'componets/header.scss';
+@import 'componets/catalog-item.scss';
+@import 'componets/catalog-box.scss';
+@import 'componets/form.scss';
+@import 'componets/input.scss';
+@import 'componets/input-box.scss';
+@import 'componets/filter-box.scss';
+@import 'componets/input-list.scss';
+@import 'componets/input-search.scss';
+
+// includes
+@import 'includes/header.scss';
+@import 'includes/footer.scss';
+
+//pages
+
+// main
+@import 'pages/main/section-1.scss';
+@import 'pages/main/section-2.scss';
+@import 'pages/main/section-3.scss';
+@import 'pages/main/section-4.scss';
+@import 'pages/main/section-5.scss';
+
+
+// Users
+
+// create
+@import 'pages/User/create/section-1.scss';
+// login
+@import 'pages/User/login/section-1.scss';
+
+
+// Goods
+
+// index
+@import 'pages/Goods/index/section-1.scss';
+@import 'pages/Goods/index/section-2.scss';

@@ -1,0 +1,106 @@
+.input-list {
+    padding: 10px 50px 10px 15px;
+    border: none;
+    background: $my-white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+    font-size: 16px;
+    font-family: 'Montserrat';
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+}
+
+.input-list-box-input {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        right: 15px;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background: #545454;
+    }
+}
+
+.input-list-box-options {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: -40px;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    &__item {}
+
+    &__button {
+        text-align: left;
+        padding: 10px 10px;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+
+    &_active {
+        visibility: visible;
+        opacity: 1;
+        top: 50px;
+    }
+}
+
+.input-list-box {
+    position: relative;
+}
+
+.input-list-box-options-list {
+    position: relative;
+
+    &__button {
+        text-align: left;
+        padding: 10px 10px;
+        width: 100%;
+        background-color: $my-white;
+        font-size: 16px;
+        border-bottom: 1px solid black;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 15px;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background: #545454;
+        }
+    }
+}
+
+
+.input-list-box-options-list-options {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    left: 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    &_active {
+        visibility: visible;
+        opacity: 1;
+        left: 200px;
+        top: 0px;
+    }
+}

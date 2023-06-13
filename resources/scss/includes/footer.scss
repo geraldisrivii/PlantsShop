@@ -1,0 +1,22 @@
+.site-footer {
+    padding: 100px 0px;
+    background-color: #3F3F3F;
+    &__content-box{
+        width: fit-content;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+    &__logo{
+        margin-right: 30px;
+    }
+}
+.site-footer-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    &__item {}
+    &__link {
+        color: white;
+    }
+}

@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    @include table{
+        font-size: 54%;
+    }
+    @include phone{
+        font-size: 48%;
+    }
+}
+body{
+    font-size: 18px;
+    font-family: 'Montserrat';
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.container{
+    max-width: $max-width;
+    margin: 0 auto;
+}
+.active{
+    color: $accent-color;
+}
+input{
+    outline: none;
+    border: none;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    &:focus{
+        outline: none;
+    }
+}
+button{
+    outline: none;
+    border: none;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    &:focus{
+        outline: none;
+    }
+}

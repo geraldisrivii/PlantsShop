@@ -1,0 +1,11 @@
+.header-box {
+    &_white {
+        * {
+            color: white;
+        }
+    }
+    &__text {
+        margin-bottom: 65px;
+    }
+
+}

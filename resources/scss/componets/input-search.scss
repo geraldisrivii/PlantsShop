@@ -1,0 +1,18 @@
+.input-search {
+    background: $my-white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+    padding: 10px 10px 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    min-width: 350px;
+    &__input{
+        background: $my-white;
+        width: 90%;
+    }
+    &__image{
+        width: 23px;
+    }
+}

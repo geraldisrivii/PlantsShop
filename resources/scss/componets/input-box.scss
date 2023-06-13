@@ -1,0 +1,14 @@
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+
+    input {
+        width: 50%;
+
+        @include table {
+            width: 100%;
+        }
+    }
+}

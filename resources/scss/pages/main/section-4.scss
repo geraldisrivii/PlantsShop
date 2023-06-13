@@ -1,0 +1,15 @@
+.main-section-4 {
+    &__header {
+        margin-bottom: 65px;
+        text-align: center;
+    }
+    &__catalog{
+        margin-bottom: 40px;
+    }
+    &__button{
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+    }
+    margin-bottom: 100px;
+}
