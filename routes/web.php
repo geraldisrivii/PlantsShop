@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'pages.main')->name('main');
+// some comments
 
 Route::resource('orders', 'OrderController');
 
