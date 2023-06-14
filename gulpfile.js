@@ -1,4 +1,3 @@
-
 let gulp = require('gulp');
 
 let dartSass = require('sass');
@@ -82,7 +81,3 @@ async function watch() {
 let build = gulp.series(gulp.parallel(js, styles, imagesToWebp), watch);
 
 exports.default = build;
-
-function someFunction(){
-    console.log(sass);
-}

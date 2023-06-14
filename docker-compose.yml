@@ -1,0 +1,38 @@
+version: '3.0'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "150:120"
+    volumes:
+      - ./:/var/www
+      - ./nginx/nginx.conf/:/etc/nginx/nginx.conf
+    networks:
+      - default
+  php:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    volumes:
+      - ./:/var/www
+    ports:
+      - "7000:9000"
+    networks:
+      - default
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "4444:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+
+networks:
+  default:
+    driver: bridge
