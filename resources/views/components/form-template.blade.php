@@ -4,7 +4,7 @@
     $types = ['GET', 'POST'];
     $isTypically = in_array($method, $types);
 @endphp
-<form {{ $attributes }} method="{{$isTypically ? $method : 'POST' }}">
+<form {{ $attributes }} method="{{ $isTypically ? $method : 'POST' }}">
     @if ($method != 'GET')
         @csrf
     @endif

@@ -16,7 +16,7 @@
         <nav class="nav">
             <ul class="nav-list">
                 @foreach ($links as $route => $name)
-                    <li class="nav-list__item"><a href="{{ route($route) }}" class="nav-list__link {{ request()->routeIs($route) ? 'active' : '' }}">{{ $name }}</a></li>
+                    <li class="nav-list__item"><a href="{{$route == 'goods.index' ? route($route) . '?page=1' : route($route) }}" class="nav-list__link {{ request()->routeIs($route) ? 'active' : '' }}">{{ $name }}</a></li>
                 @endforeach
             </ul>
         </nav>

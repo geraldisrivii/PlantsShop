@@ -8,8 +8,8 @@ services:
     volumes:
       - ./:/var/www
       - ./nginx/nginx.conf/:/etc/nginx/nginx.conf
-    networks:
-      - default
+      - ./nginx/logs/:/var/log/nginx
+    container_name: server
   php:
     build:
       context: .
@@ -18,21 +18,22 @@ services:
       - ./:/var/www
     ports:
       - "7000:9000"
-    networks:
-      - default
-  mysql:
+    container_name: project
+  db:
     image: mysql:8.0
     ports:
-      - "4444:3306"
+      - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+    volumes:
+      - ./tmp/db:/var/lib/mysql
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    container_name: project_db
   phpmyadmin:
     image: phpmyadmin:latest
     ports:
       - "8080:80"
     environment:
-      PMA_HOST: mysql
-
-networks:
-  default:
-    driver: bridge
+      PMA_HOST: db
+      PMA_PORT: 3306
+    container_name: phpmyadmin

@@ -1,0 +1,27 @@
+.catalog-item {
+  width: 320px;
+  padding: 5px;
+  text-align: left;
+}
+
+.catalog-item-image-box__image {
+  width: 100%;
+  height: 320px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px 5px 0px 0px;
+  filter: contrast(80%);
+}
+
+.catalog-item-descritpion-box {
+  margin-bottom: 10px;
+}
+.catalog-item-descritpion-box__title {
+  font-size: 2.6rem;
+  font-weight: 400;
+}
+.catalog-item-descritpion-box__text {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 120%;
+}/*# sourceMappingURL=catalog-item.css.map */

@@ -1,0 +1,9 @@
+.catalog-box {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=catalog-box.css.map */

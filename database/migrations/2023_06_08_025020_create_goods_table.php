@@ -19,7 +19,12 @@ class CreateGoodsTable extends Migration
             $table->text('description');
             $table->float('price');
             $table->string('image');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
+
+            $table->index('category_id', 'goods_category_idx');
+
+            $table->foreign('category_id', 'goods_category_fk')->references('id')->on('categories');
         });
     }
 

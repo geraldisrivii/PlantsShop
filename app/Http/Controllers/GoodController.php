@@ -2,54 +2,61 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Good;
+use App\Models\Color;
+use App\Models\GoodsColors;
+use App\Http\classes\Filter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GoodController extends Controller
 {
-    public function salesView (){
+    public function salesView()
+    {
 
     }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        return view('pages.Good.index');
-    }
+        $orderBy = request('orderBy');
+        
+        $pageValue = request('page');
+        if ($pageValue == 0) {
+            return redirect(route('goods.index') . '?page=1');
+        }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+        $filter = new Filter('goods');
+        $filter->setFilters([
+            ['category_id', request('category_id')],
+            ['title', request('title')],
+        ]);
+        $filter->setOrderBy($orderBy);
+        $goods = $filter->run()->orderBy('id', $orderBy)->paginate(9);
+        return view('pages.Good.index', compact('goods'));
+    }
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Good $good)
     {
-        //
+        // same goods
+        $reviews = $good->reviews()->join('users', 'users.id', '=', 'reviews.user_id')->limit(3)->get();
+
+        $sameGoods = DB::table('goods')->where('category_id', $good->category_id)->where('id', '!=', $good->id)->limit(3)->get();
+
+        $goodColors = GoodsColors::all()->where('good_id', $good->id);
+        foreach ($goodColors as $goodColor) {
+            $goodColor->colorObject = Color::all()->where('id', $goodColor->color_id)->first();
+            unset($goodColor['created_at']);
+            unset($goodColor['updated_at']);
+        }
+        return view('pages.Good.show', compact('good', 'goodColors', 'sameGoods', 'reviews'));
     }
 
     /**

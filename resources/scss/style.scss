@@ -17,6 +17,10 @@
 @import 'componets/filter-box.scss';
 @import 'componets/input-list.scss';
 @import 'componets/input-search.scss';
+@import 'componets/color-box.scss';
+@import 'componets/review-item.scss';
+@import 'componets/review-box.scss';
+
 
 // includes
 @import 'includes/header.scss';
@@ -45,3 +49,12 @@
 // index
 @import 'pages/Goods/index/section-1.scss';
 @import 'pages/Goods/index/section-2.scss';
+@import 'pages/Goods/index/section-3.scss';
+@import 'pages/Goods/index/section-4.scss';
+@import 'pages/Goods/index/section-5.scss';
+@import 'pages/Goods/index/section-6.scss';
+
+// show
+@import 'pages/Goods/show/section-1.scss';
+@import 'pages/Goods/show/section-2.scss';
+@import 'pages/Goods/show/section-3.scss';

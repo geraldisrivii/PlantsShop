@@ -1,0 +1,20 @@
+.Good-index-section-2 {
+  margin-bottom: 70px;
+}
+
+.Good-index-section-2-filter-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Good-index-section-2-filter-box-input-list-box {
+  display: flex;
+  gap: 30px;
+}
+
+.Good-index-section-2-filter-box-input-search-box {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}/*# sourceMappingURL=section-2.css.map */
