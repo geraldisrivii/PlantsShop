@@ -7,11 +7,11 @@
 <section class="Good-index-section-4 container">
     <x-header class="Good-index-section-4__header" :values="$headerValues" />
     <x-catalog-box class="Good-index-section-4__catalog-box">
-        <x-catalog-item></x-catalog-item>
-        <x-catalog-item></x-catalog-item>
-        <x-catalog-item></x-catalog-item>
+        @foreach ($salesGoods as $salesGood)
+            <x-catalog-item :good="$salesGood"></x-catalog-item>
+        @endforeach
     </x-catalog-box>
-    <x-button link modifier="target" href="{{route('goods.salesView')}}">Больше акций</x-button>
+    <x-button link modifier="target" href="{{ route('goods.salesView') }}">Больше акций</x-button>
 </section>
 
 @push('scripts')

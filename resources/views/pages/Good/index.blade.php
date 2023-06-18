@@ -1,6 +1,5 @@
 @php
     $currentPage = request()->input('page');
-
     $firstSectionGoods =  $goods->slice(0, 6);
     $SecondSectionGoods =  $goods->slice(6, 9);
     // dd($SecondSectionGoods);
@@ -12,7 +11,7 @@
     @include('sections.Good.index.section-2')
     @include('sections.Good.index.section-3', $firstSectionGoods)
     @if ($currentPage == 1)
-        @include('sections.Good.index.section-4')
+        @include('sections.Good.index.section-4', $salesGoods)
     @endif
     @include('sections.Good.index.section-5', $SecondSectionGoods)
     @include('sections.Good.index.section-6')

@@ -19,12 +19,19 @@ class CreateGoodsTable extends Migration
             $table->text('description');
             $table->float('price');
             $table->string('image');
+            $table->unsignedInteger('amountBuys');
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('sales_id')->nullable();
             $table->timestamps();
 
             $table->index('category_id', 'goods_category_idx');
+            $table->index('sales_id', 'goods_sales_idx');
+
+
+            $table->unique('sales_id');
 
             $table->foreign('category_id', 'goods_category_fk')->references('id')->on('categories');
+            $table->foreign('sales_id', 'goods_sales_fk')->references('id')->on('sales');
         });
     }
 

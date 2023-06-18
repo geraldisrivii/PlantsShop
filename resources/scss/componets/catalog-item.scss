@@ -16,6 +16,7 @@
 
 .catalog-item-descritpion-box {
     margin-bottom: 10px;
+
     &__title {
         font-size: 2.6rem;
         font-weight: 400;
@@ -26,4 +27,14 @@
         font-size: 16px;
         line-height: 120%;
     }
+
+    &__price {
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    &__old-price {
+        text-decoration: line-through;
+    }
+
 }

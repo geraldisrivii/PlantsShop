@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'pages.main')->name('main');
+Route::get('/', 'GoodController@main')->name('main');
 // some comments
 
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Good;
 use App\Models\Color;
+use App\Models\Review;
+use App\Models\Category;
 use App\Models\GoodsColors;
 use App\Http\classes\Filter;
 use Illuminate\Http\Request;
@@ -15,23 +17,33 @@ class GoodController extends Controller
     {
 
     }
+    public function main(){
+        $goods = Good::orderBy('amountBuys', 'desc')->paginate(3); 
+        return view('pages.main', compact('goods'));
+    }
     public function index()
     {
         $orderBy = request('orderBy');
-        
+
         $pageValue = request('page');
         if ($pageValue == 0) {
             return redirect(route('goods.index') . '?page=1');
         }
 
-        $filter = new Filter('goods');
+        $filter = new Filter('App\Models\Good');
         $filter->setFilters([
-            ['category_id', request('category_id')],
-            ['title', request('title')],
+            ['category_id', request('category_id'), 'match'],
+            ['title', request('title'), 'like'],
         ]);
         $filter->setOrderBy($orderBy);
-        $goods = $filter->run()->orderBy('id', $orderBy)->paginate(9);
-        return view('pages.Good.index', compact('goods'));
+        $goods = $filter->run()->paginate(9);
+        $salesGoods = Good::where('sales_id', '!=', 'NULL')->limit(3)->get();
+
+        // categories
+
+        $categories = Category::all();
+
+        return view('pages.Good.index', compact('goods', 'salesGoods', 'categories'));
     }
     public function create()
     {
@@ -48,7 +60,7 @@ class GoodController extends Controller
         // same goods
         $reviews = $good->reviews()->join('users', 'users.id', '=', 'reviews.user_id')->limit(3)->get();
 
-        $sameGoods = DB::table('goods')->where('category_id', $good->category_id)->where('id', '!=', $good->id)->limit(3)->get();
+        $sameGoods = Good::where('category_id', $good->category_id)->where('id', '!=', $good->id)->limit(3)->get();
 
         $goodColors = GoodsColors::all()->where('good_id', $good->id);
         foreach ($goodColors as $goodColor) {

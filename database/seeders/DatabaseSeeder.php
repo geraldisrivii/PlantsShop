@@ -7,11 +7,13 @@ use App\Models\Role;
 use App\Models\User;
 use App\Models\Color;
 use App\Models\Order;
+use App\Models\Sales;
 use App\Models\Review;
 use App\Models\Category;
 use App\Models\Order_Good;
 use App\Models\GoodsColors;
 use Illuminate\Database\Seeder;
+use App\Models\OrderByCategories;
 
 class DatabaseSeeder extends Seeder
 {
@@ -32,6 +34,8 @@ class DatabaseSeeder extends Seeder
         ]);
         // users
         User::factory(10)->create();
+        // sales
+        Sales::factory(50)->create();
         // goods
         Good::factory(100)->create();
         // reviews
@@ -44,5 +48,16 @@ class DatabaseSeeder extends Seeder
         Color::factory(20)->create();
 
         GoodsColors::factory(45)->create();
+
+        OrderByCategories::create([
+            'title'=> 'popularity',
+        ]);
+        OrderByCategories::create([
+            'title'=> 'lowPrice',
+        ]);
+        OrderByCategories::create([
+            'title'=> 'highPrice',
+        ]);
+
     }
 }

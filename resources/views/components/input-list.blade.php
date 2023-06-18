@@ -1,4 +1,4 @@
-@props(['name' => ''])
+@props(['name' => '', 'categories' => []])
 @php
     $buttonId = Str::uuid();
     $listId = Str::uuid();

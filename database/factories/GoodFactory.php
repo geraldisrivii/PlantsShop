@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
 use App\Models\Good;
+use App\Models\Sales;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class GoodFactory extends Factory
@@ -23,6 +24,7 @@ class GoodFactory extends Factory
             'price'=>$this->faker->randomFloat(2, 500, 3000),
             'image'=>$this->faker->imageUrl(),
             'category_id'=>Category::get()->random()->id,
+            'amountBuys'=>random_int(0, 50),
         ];
     }
 }
