@@ -20,7 +20,7 @@
 @import 'componets/color-box.scss';
 @import 'componets/review-item.scss';
 @import 'componets/review-box.scss';
-
+@import 'componets/paginate-box.scss';
 
 // includes
 @import 'includes/header.scss';
@@ -58,3 +58,10 @@
 @import 'pages/Goods/show/section-1.scss';
 @import 'pages/Goods/show/section-2.scss';
 @import 'pages/Goods/show/section-3.scss';
+
+// sales
+
+@import 'pages/Goods/sales/section-1.scss';
+@import 'pages/Goods/sales/section-2.scss';
+@import 'pages/Goods/sales/section-3.scss';
+@import 'pages/Goods/sales/section-4.scss';

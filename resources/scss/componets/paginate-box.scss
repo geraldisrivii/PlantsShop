@@ -1,0 +1,19 @@
+
+.paginate-box {
+    text-align: center;
+    margin-bottom: 120px;
+
+    &__text {
+        font-size: 22px;
+    }
+}
+
+.paginate-box-buttons {
+    margin-bottom: 10px;
+
+    &__button {
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+}

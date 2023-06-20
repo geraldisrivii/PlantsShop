@@ -16,7 +16,8 @@ class GoodController extends Controller
 {
     public function salesView()
     {
-        return view('pages.Good.salesIndex');
+        $salesGoods = Good::where('sales_id', '!=', 'NULL')->paginate(9);
+        return view('pages.Good.sales', compact('salesGoods'));
     }
     public function main(){
         $goods = Good::orderBy('amountBuys', 'desc')->paginate(3); 
