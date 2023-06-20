@@ -9,13 +9,14 @@ use App\Models\Category;
 use App\Models\GoodsColors;
 use App\Http\classes\Filter;
 use Illuminate\Http\Request;
+use App\Models\OrderByCategories;
 use Illuminate\Support\Facades\DB;
 
 class GoodController extends Controller
 {
     public function salesView()
     {
-
+        return view('pages.Good.salesIndex');
     }
     public function main(){
         $goods = Good::orderBy('amountBuys', 'desc')->paginate(3); 
@@ -35,15 +36,15 @@ class GoodController extends Controller
             ['category_id', request('category_id'), 'match'],
             ['title', request('title'), 'like'],
         ]);
-        $filter->setOrderBy($orderBy);
+        $filter->setOrderBy($orderBy, OrderByCategories::class);
         $goods = $filter->run()->paginate(9);
         $salesGoods = Good::where('sales_id', '!=', 'NULL')->limit(3)->get();
-
         // categories
 
         $categories = Category::all();
+        $orderByCategories = OrderByCategories::all();
 
-        return view('pages.Good.index', compact('goods', 'salesGoods', 'categories'));
+        return view('pages.Good.index', compact('goods', 'salesGoods', 'categories', 'orderByCategories'));
     }
     public function create()
     {

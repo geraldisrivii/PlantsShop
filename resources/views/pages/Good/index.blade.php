@@ -8,7 +8,7 @@
 @extends('layouts.main')
 @section('content')
     @include('sections.Good.index.section-1')
-    @include('sections.Good.index.section-2')
+    @include('sections.Good.index.section-2', [$categories, $orderByCategories])
     @include('sections.Good.index.section-3', $firstSectionGoods)
     @if ($currentPage == 1)
         @include('sections.Good.index.section-4', $salesGoods)

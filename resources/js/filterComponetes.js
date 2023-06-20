@@ -15,11 +15,11 @@ for (const input of inputs) {
             buttons = element.querySelectorAll('.input-list-box-options__button');
             for (const button of buttons) {
                 button.addEventListener('click', function () {
-                    console.log(input)
                     input.value = button.innerText;
                     document.querySelector(`[for="${input.getAttribute('id')}"]`).textContent = button.innerText;
-                    input.value = button.innerText;
-                    console.log(input)
+                    input.value = button.id;
+                    console.log(button.id)
+                    console.log(input.value)
                     options.classList.toggle('input-list-box-options_active');
                 })
             }

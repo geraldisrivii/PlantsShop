@@ -1,13 +1,9 @@
-@php
-    $orderByCategories = ['popularity', 'lowPrice', 'highPrice'];
-@endphp
-
 
 <section class="Good-index-section-2 container">
     <x-form-template method="GET" action="{{ route('goods.index') }}">
         <x-filter-box class="Good-index-section-2-filter-box">
             <div class="Good-index-section-2-filter-box-input-list-box">
-                <x-input-list name="orderBy" class="Good-index-section-2-filter-box__input-list">
+                <x-input-list :categories="$orderByCategories" name="orderBy" class="Good-index-section-2-filter-box__input-list">
                 </x-input-list>
                 <x-input-list :categories="$categories" name="category_id" class="Good-index-section-2-filter-box__input-list">
                 </x-input-list>

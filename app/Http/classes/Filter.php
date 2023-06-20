@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Filter
 {
     protected string $className;
-    protected string|null $orderBy;
+    protected int|string|null $orderById;
     protected array $filters;
+
+    protected string|null $orderByClassName;
 
     protected array $typesOfOrderBy = [
         'popularity' => ['amountBuys', 'desc'],
@@ -24,9 +26,10 @@ class Filter
     {
         $this->filters = $filters;
     }
-    public function setOrderBy($orderBy)
+    public function setOrderBy($orderById, string $orderByClassName)
     {
-        $this->orderBy = $orderBy;
+        $this->orderById = $orderById;
+        $this->orderByClassName = $orderByClassName;
     }
     public function run()
     {
@@ -41,13 +44,17 @@ class Filter
             }
         }
         $isValidKey = false;
+        if($this->orderById == null){
+            return $query;
+        }
+        $orderBy = $this->orderByClassName::find($this->orderById)->title;
         foreach ($this->typesOfOrderBy as $key => $value) {
-            if ($this->orderBy == $key) {
+            if ($orderBy == $key) {
                 $isValidKey = true;
             }
         }
         if ($isValidKey) {
-            $query->orderBy($this->typesOfOrderBy[$this->orderBy][0], $this->typesOfOrderBy[$this->orderBy][1]);
+            $query->orderBy($this->typesOfOrderBy[$orderBy][0], $this->typesOfOrderBy[$orderBy][1]);
         }
         return $query;
     }
