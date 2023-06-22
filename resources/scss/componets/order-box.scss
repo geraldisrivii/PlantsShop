@@ -1,0 +1,13 @@
+.orders-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    @include table{
+        gap: 20px;
+        align-items: flex-start;
+    }
+    &__line{
+        background-color: black;
+        height: 4px;
+    }
+}

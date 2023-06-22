@@ -11,7 +11,7 @@
             <x-catalog-item :good="$salesGood"></x-catalog-item>
         @endforeach
     </x-catalog-box>
-    <x-button link modifier="target" href="{{ route('goods.salesView') }}">Больше акций</x-button>
+    <x-button link modifier="target" href="{{ route('sales.index') }}">Больше акций</x-button>
 </section>
 
 @push('scripts')

@@ -55,4 +55,13 @@
             background: url('img/goods/index/section-1/background-plants-min.webp') center/cover no-repeat;
         }
     }
+
+    &_wild-plants-image {
+        background: url('img/goods/basket/section-1/background_basket-max.webp') center/cover no-repeat;
+
+        @include phone {
+            background: url('img/goods/basket/section-1/background_basket-min.webp') center/cover no-repeat;
+        }
+    }
+
 }

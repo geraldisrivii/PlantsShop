@@ -7,5 +7,5 @@
         <x-button link href="?page={{$currentPage - 1}}" class="paginate-box-buttons__button"><</x-button>
         <x-button link href="?page={{$currentPage + 1}}" class="paginate-box-buttons__button">></x-button>
     </div>
-    <p class="paginate-box__text">10</p>
+    <p class="paginate-box__text">{{$currentPage}}</p>
 </div>

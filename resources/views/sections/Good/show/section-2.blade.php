@@ -11,7 +11,7 @@
             <x-catalog-item :good="$sameGood"></x-catalog-item>
         @endforeach
     </x-catalog-box>
-    <x-button link class="Good-show-section-2__button">Больше похожих</x-button>
+    <x-button link href="{{ route('sales.index') }}" class="Good-show-section-2__button">Больше похожих</x-button>
 </section>
 
 @push('scripts')

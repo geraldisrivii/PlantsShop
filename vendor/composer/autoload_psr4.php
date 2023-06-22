@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'voku\\' => array($vendorDir . '/voku/portable-ascii/src/voku'),
+    'YooKassa\\Validator\\' => array($vendorDir . '/yoomoney/yookassa-sdk-validator/src'),
+    'YooKassa\\' => array($vendorDir . '/yoomoney/yookassa-sdk-php/lib'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),
@@ -72,6 +74,7 @@ return array(
     'Facade\\IgnitionContracts\\' => array($vendorDir . '/facade/ignition-contracts/src'),
     'Facade\\FlareClient\\' => array($vendorDir . '/facade/flare-client-php/src'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),
+    'Ds\\' => array($vendorDir . '/php-ds/php-ds/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'Doctrine\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector'),

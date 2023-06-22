@@ -1,5 +1,6 @@
 @props([
     'colors' => null,
+    'isViewAmount' => true,
 ])
 
 @php
@@ -9,15 +10,17 @@
 @if ($colors != null)
     <div class="color-box">
         @foreach ($colors as $color)
-            <a class="color-box__item" style="background-color:{{ $color->colorObject->hash }}"
-                id="{{ $color->colorObject->id }}" href="?color={{ $color->colorObject->id }}">
+            <a class="color-box__item" style="background-color:{{ $color->hash }}" id="{{ $color->id }}"
+                href="?color={{ $color->id }}">
             </a>
             @php
-                $quantityArray[$color->colorObject->id] = $color->quantity;
+                $quantityArray[$color->id] = $color->quantity;
             @endphp
         @endforeach
     </div>
-    <p>Количество: {{$quantityArray[request('color')] ?? 'выберете цвет'}}</p>
+    @if ($isViewAmount)
+        <p>Количество: {{ $quantityArray[request('color')] ?? 'выберете цвет' }}</p>
+    @endif
 @else
     <div>
         <p>not available colors</p>

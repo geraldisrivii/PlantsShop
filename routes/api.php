@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::patch('basket/inc/{basket}', 'Api\BasketController@amountIncrement')->name('basket.amountIncrement');
+Route::patch('basket/dec/{basket}', 'Api\BasketController@amountDecrement')->name('basket.amountDecrement');
+Route::delete('basket/{basket}', 'Api\BasketController@destroy')->name('basket.destroy');

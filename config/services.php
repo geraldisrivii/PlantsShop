@@ -30,4 +30,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'yookassa' => [
+        'shopId' => env('YOOKASSA_SHOP_ID', null),
+        'secretKey' => env('YOOKASSA_SECRET_KEY', null),
+    ]
+
 ];

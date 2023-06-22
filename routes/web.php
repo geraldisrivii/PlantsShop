@@ -15,12 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'GoodController@main')->name('main');
 // some comments
-
+// basket controller
+Route::get('basket', 'BasketController@index')->name('basket.index');
+Route::post('basket', 'BasketController@store')->name('basket.store');
+Route::get('orders/callback', 'OrderController@callback')->name('orders.callback');
 
 Route::resource('orders', 'OrderController');
 
-Route::get('goods/sales', 'GoodController@salesView')->name('goods.salesView');
 Route::get('goods', 'GoodController@index')->name('goods.index');
+Route::get('sales', 'SalesController@index')->name('sales.index');
 Route::get('goods/{good}', 'GoodController@show')->name('goods.show');
 
 
@@ -39,6 +42,9 @@ Route::group([
     'prefix' => 'users',
 ], function () {
     Route::get('/', 'UserController@index')->name('users.index');
+    Route::get('/card', 'UserController@card')->name('users.index.card');
+    Route::get('/settings', 'UserController@settings')->name('users.index.settings');
+    Route::get('/orders', 'UserController@orders')->name('users.index.orders');
     Route::delete('/{user}', 'UserController@destroy')->name('users.destroy');
     Route::delete('/{user}', 'UserController@logout')->name('users.logout');
 });

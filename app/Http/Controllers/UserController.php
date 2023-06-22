@@ -8,10 +8,20 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    // GET
     public function index()
     {
-        //
+        return redirect()->route('users.index.card');
     }
+    public function card(){
+        return view('pages.User.index.card');
+    }
+    // public function settings(){
+    //     return view('pages.User.index.settings');
+    // }
+    // public function orders(){
+    //     return view('pages.User.index.orders');
+    // }
 
     public function create()
     {
@@ -25,9 +35,13 @@ class UserController extends Controller
             'password' => $requestData['password'],
             'role_id' => '1',
         ];
-        User::create($userData);
-        session(['user' => $userData]);
-        return redirect()->route('users.index');
+        $user = User::create($userData);
+        session(['user' => $user]);
+        $routeName = request('redirect');
+        if($routeName == null){
+            $routeName = 'users.index';
+        }
+        return redirect()->route($routeName);
     }
     public function loginView()
     {

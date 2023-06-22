@@ -1,0 +1,16 @@
+.delete-btn {
+    border-radius: 100%;
+    border: solid black 1px;
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &__line {
+        width: 30px;
+        height: 2px;
+        background-color: black;
+    }
+}

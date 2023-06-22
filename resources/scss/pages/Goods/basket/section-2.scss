@@ -1,0 +1,60 @@
+.Good-basket-section-2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    @media (max-width: 1200px) {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    gap: 40px;
+    max-width: 1250px;
+    margin: 0 auto;
+    margin-bottom: 120px;
+}
+.Good-basket-section-2-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+
+    &__item {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__text {
+        font-weight: 300;
+
+        span {
+            font-weight: 500;
+            color: $accent-color;
+        }
+    }
+
+    &__price {
+        font-size: 20px;
+        font-weight: 600;
+        color: $primary-color;
+    }
+
+    &_2 {
+        height: 100%;
+    }
+}
+
+.Good-basket-section-2-info-box-actions {
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    &__button {}
+}
+
+.order-item__action-container{
+    display: flex;
+    gap: 20px;
+}

@@ -1,11 +1,11 @@
-@props(['link'])
+@props(['link' => null, 'disabled' => false])
 @php
     $attributes['class'] = 'btn ' . $attributes['class'] . ' ' . 'btn_' . $attributes['modifier'];
 @endphp
 
 
-@isset($link)
-    <a {{ $attributes }}>{{ $slot }}</a>
+@if ($link != null)
+    <a {{ $disabled ? 'disabled' : '' }} {{ $attributes }}>{{ $slot }}</a>
 @else
-    <button {{ $attributes }}>{{ $slot }}</button>
-@endisset
+    <button {{ $disabled ? 'disabled' : '' }} {{ $attributes }}>{{ $slot }}</button>
+@endif

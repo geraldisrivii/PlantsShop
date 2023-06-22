@@ -1,15 +1,23 @@
 .Good-show-section-1-right-container-section-2 {
     &__price {
-        font-weight: 300;
-        font-size: 25px;
+        font-weight: 600;
+        font-size: 28px;
         color: $primary-color;
+    }
+    &__old-price {
+        font-weight: 300;
+        font-size: 22px;
+        text-decoration: line-through;
     }
 }
 
 .Good-show-section-1 {
     padding-top: 70px;
     display: grid;
-    grid-template-columns: 1fr 460px;
+    grid-template-columns: 400px 1fr;
+    @include table{
+        grid-template-columns: 1fr;
+    }
     gap: 50px;
     margin-bottom: 120px;
 }

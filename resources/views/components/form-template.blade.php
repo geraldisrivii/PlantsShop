@@ -5,11 +5,7 @@
     $isTypically = in_array($method, $types);
 @endphp
 <form {{ $attributes }} method="{{ $isTypically ? $method : 'POST' }}">
-    @if ($method != 'GET')
-        @csrf
-    @endif
-    @if (!$isTypically)
-        @method($method)
-    @endif
+    {{ $method != 'GET' ? csrf_field() : '' }}
+    {{ !$isTypically ? method_field($method) : '' }}
     {{ $slot }}
 </form>

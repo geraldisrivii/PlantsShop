@@ -16,11 +16,19 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedInteger('amount');
+            $table->unsignedBigInteger('status');
+            $table->string('kassa_id');
+            $table->string('checked_id');
             $table->timestamps();
 
             // user_id
             $table->index('user_id');
             $table->foreign('user_id', 'user_id_order_fk')->references('id')->on('users');
+
+            // status
+            $table->index('status');
+            $table->foreign('status', 'status_order_fk')->references('id')->on('statuses');
         });
     }
 

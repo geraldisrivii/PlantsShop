@@ -21,6 +21,10 @@
 @import 'componets/review-item.scss';
 @import 'componets/review-box.scss';
 @import 'componets/paginate-box.scss';
+@import 'componets/add-btn.scss';
+@import 'componets/delete-btn.scss';
+@import 'componets/order-box.scss';
+@import 'componets/order-item.scss';
 
 // includes
 @import 'includes/header.scss';
@@ -42,6 +46,9 @@
 @import 'pages/User/create/section-1.scss';
 // login
 @import 'pages/User/login/section-1.scss';
+
+// index
+@import 'pages/User/index/section-1.scss';
 
 
 // Goods
@@ -65,3 +72,9 @@
 @import 'pages/Goods/sales/section-2.scss';
 @import 'pages/Goods/sales/section-3.scss';
 @import 'pages/Goods/sales/section-4.scss';
+
+// basket
+
+@import 'pages/Goods/basket/section-1.scss';
+@import 'pages/Goods/basket/section-2.scss';
+
